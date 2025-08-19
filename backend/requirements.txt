@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+motor
+cryptography
+pydantic-settings
+pyjwt
+python-multipart
+pydantic>=2.0
+paramiko

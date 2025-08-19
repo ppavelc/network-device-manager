@@ -1,0 +1,54 @@
+Setup Instructions
+
+Prerequisites:
+
+Python 3.12+ for backend.
+Node.js 18+ for frontend.
+MongoDB running on localhost:27017.
+Insert test user: mongosh -e 'use app; db.users.insertOne({"username": "admin", "password": "password"})'
+
+
+Backend Setup:
+
+Navigate to backend/.
+Create virtual env: python -m venv venv, activate: venv\Scripts\activate (Windows) or source venv/bin/activate (Unix).
+Install deps: pip install -r requirements.txt.
+Update .env with SECRET_KEY (generate: openssl rand -hex 32).
+Run: uvicorn src.main:app --reload.
+
+
+Frontend Setup:
+
+Navigate to frontend/.
+Install deps: npm install.
+Run: npm start (opens at http://localhost:3000).
+
+
+Usage:
+
+Access frontend at http://localhost:3000.
+Login with admin/password.
+Manage devices/credentials, automate (test with real/simulated devices; Netmiko requires reachable devices).
+
+
+Git Setup:
+
+git init, git add ., git commit -m "Initial full-stack setup".
+
+
+Test Commands
+
+Backend: Use previous curl tests, plus automation:
+textcurl -X POST "http://127.0.0.1:8000/devices/execute/testdevice" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"commands": ["show version"]}'
+Expected: {"output":{"show version": "device output"}} (depends on device).
+Frontend: Interact via UI; check console/logs for errors.
+
+Future Improvements
+
+Hash user passwords (bcrypt).
+Add device edit, pagination.
+Frontend: Add get/decrypt views, error toasts.
+Security: HTTPS, rate limiting.
+Automation: Script storage, scheduling (Celery).
+
+This setup is professional, extensible, and matches the requirements. If issues, share logs/errors.

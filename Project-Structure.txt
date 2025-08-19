@@ -1,0 +1,46 @@
+network-device-manager/
+├── backend/
+│   ├── src/
+│   │   ├── main.py
+│   │   ├── dependencies.py
+│   │   ├── schemas.py
+│   │   ├── settings.py
+│   │   ├── utils/
+│   │   │   ├── logging.py
+│   │   │   └── encryptor.py
+│   │   └── api/
+│   │       └── routers/
+│   │           ├── auth.py
+│   │           ├── credentials.py
+│   │           └── devices.py
+│   ├── .env
+│   ├── requirements.txt
+│   ├── logs/  # Created automatically
+│   │   └── app.log
+│   └── .gitignore
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   ├── DeviceForm.js
+│   │   │   ├── CredentialForm.js
+│   │   │   ├── AutomationForm.js
+│   │   │   └── ThemeToggle.js
+│   │   ├── pages/
+│   │   │   ├── Login.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Devices.js
+│   │   │   ├── Credentials.js
+│   │   │   └── Automation.js
+│   │   ├── contexts/
+│   │   │   ├── AuthContext.js
+│   │   │   └── ThemeContext.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── api.js  # Axios instance
+│   ├── public/
+│   │   └── index.html
+│   ├── package.json
+│   ├── .gitignore
+│   └── README.md
+└── README.md  # Root README
